@@ -1,0 +1,7 @@
+.button {
+	-fx-border-style: none;
+	-fx-backgroun: none;
+	-fx-background-color: #69140E;
+	-fx-width: 200px;
+	-fx-font: Segoe UI Light;
+}

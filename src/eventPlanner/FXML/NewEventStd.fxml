@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eventPlanner.FXML.NewEventStd">
+   <center>
+      <VBox alignment="TOP_CENTER" maxWidth="500.0" prefHeight="200.0" prefWidth="100.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Lets start with the basics">
+               <font>
+                  <Font name="Segoe UI" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <TextField maxHeight="200.0" maxWidth="300.0" prefHeight="25.0" prefWidth="314.0" promptText="Event Name" />
+            <DatePicker prefHeight="25.0" prefWidth="300.0" promptText="Event Date" />
+            <HBox alignment="CENTER" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <TextField promptText="Start Time" />
+                  <TextField promptText="End Time" />
+               </children>
+            </HBox>
+            <TextArea maxWidth="300.0" prefHeight="100.0" prefWidth="403.0" promptText="Description" />
+            <HBox alignment="CENTER" prefHeight="25.0" prefWidth="300.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefWidth="150.0">
+                     <children>
+                        <Label text="Banner Image:" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_RIGHT" prefWidth="150.0">
+                     <children>
+                        <Button mnemonicParsing="false" text="Browse" />
+                     </children></VBox>
+               </children></HBox>
+            <HBox alignment="CENTER_RIGHT" maxWidth="300.0" prefWidth="300.0" spacing="5.0">
+               <children>
+                  <Button mnemonicParsing="false" text="Cancel" />
+                  <Button mnemonicParsing="false" text="Save" />
+                  <Button defaultButton="true" mnemonicParsing="false" text="Next: Routing" />
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>
