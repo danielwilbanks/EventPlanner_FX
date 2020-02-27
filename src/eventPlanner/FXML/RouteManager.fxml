@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eventPlanner.Controller.RouteManagerController">
+   <content>
+      <VBox>
+         <children>
+            <Label text="Route Manager">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label text="Search for a route from the schedule">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <HBox spacing="20.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label text="Departure Field">
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </Label>
+                        <HBox spacing="5.0">
+                           <children>
+                              <ComboBox prefWidth="200.0" promptText="-" />
+                              <TextField prefColumnCount="5" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="Arrival Field" />
+                        <HBox spacing="5.0">
+                           <children>
+                              <ComboBox prefHeight="25.0" prefWidth="200.0" promptText="-" />
+                              <TextField prefColumnCount="5" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </VBox>
+   </content>
+</ScrollPane>
