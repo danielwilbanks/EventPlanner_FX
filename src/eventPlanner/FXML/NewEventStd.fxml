@@ -21,7 +21,7 @@
                   <Insets top="20.0" />
                </VBox.margin>
             </Label>
-         <Label text="Enter basic information about the event" />
+         <Label text="Enter basic information about the event. All fields are required unless otherwise stated." />
             <HBox spacing="10.0">
                <children>
                   <Label text="Network">
@@ -49,13 +49,18 @@
             <font>
                <Font name="System Bold" size="12.0" />
             </font></TextField>
-         <HBox alignment="CENTER_LEFT" spacing="5.0">
+         <Label text="Featured Airport">
             <VBox.margin>
                <Insets top="10.0" />
             </VBox.margin>
+         </Label>
+         <HBox alignment="CENTER_LEFT" spacing="5.0">
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
             <children>
-               <ComboBox prefHeight="25.0" prefWidth="175.0" promptText="Select featured airport" />
-               <TextField prefColumnCount="5" />
+               <ComboBox prefHeight="25.0" prefWidth="175.0" promptText="-" />
+               <TextField fx:id="featAptTxt" prefColumnCount="5" />
             </children>
          </HBox>
             <HBox spacing="10.0">
@@ -63,19 +68,19 @@
                   <VBox>
                      <children>
                         <Label text="Event Date" />
-                        <DatePicker />
+                        <DatePicker fx:id="datePicker" />
                      </children>
                   </VBox>
                   <VBox prefWidth="100.0">
                      <children>
                         <Label text="Start Time" />
-                        <TextField promptText="HH:MM" />
+                        <TextField fx:id="startTimeTxt" promptText="HH:MM" />
                      </children>
                   </VBox>
                   <VBox prefWidth="100.0">
                      <children>
                         <Label text="End Time" />
-                        <TextField promptText="HH:MM" />
+                        <TextField fx:id="endTimeTxt" promptText="HH:MM" />
                      </children>
                   </VBox>
                <AnchorPane prefHeight="42.0" prefWidth="59.0">
@@ -93,13 +98,13 @@
                <Insets top="10.0" />
             </VBox.margin>
          </Label>
-            <TextArea prefHeight="119.0" prefWidth="394.0" promptText="List one address per line" />
+            <TextArea fx:id="atcEmailTxt" prefHeight="119.0" prefWidth="394.0" promptText="List one address per line" />
          <Label text="Description">
             <VBox.margin>
                <Insets top="10.0" />
             </VBox.margin>
          </Label>
-            <TextArea prefHeight="200.0" prefWidth="510.0" />
+            <TextArea fx:id="descriptionTxt" prefHeight="200.0" prefWidth="510.0" />
          <Label layoutX="20.0" layoutY="63.0" text="Routing">
             <font>
                <Font name="System Bold" size="14.0" />
@@ -109,7 +114,7 @@
             </VBox.margin>
          </Label>
          <Label text="Use the route manager to search for new routes or add custom routes not in the schedule." />
-         <Button mnemonicParsing="false" text="Open Route Manager">
+         <Button mnemonicParsing="false" onAction="#openRouteManager" text="Open Route Manager">
             <VBox.margin>
                <Insets top="5.0" />
             </VBox.margin>
@@ -119,7 +124,7 @@
                <Insets top="20.0" />
             </VBox.margin>
          </Label>
-         <TableView prefHeight="200.0">
+         <TableView fx:id="routesTableView" prefHeight="200.0">
            <columns>
              <TableColumn prefWidth="93.0" text="Route Number" />
              <TableColumn prefWidth="76.0" text="Departure" />
@@ -140,7 +145,7 @@
                <Insets top="5.0" />
             </VBox.margin>
             <children>
-               <Label text="No image selected" />
+               <Label fx:id="bannerLbl" text="No image selected" />
                <Button mnemonicParsing="false" text="Browse" />
             </children>
          </HBox>
@@ -155,7 +160,7 @@
          <Label text="Select options to add notations to the event briefing for special circumstances" />
          <HBox>
             <children>
-               <CheckBox mnemonicParsing="false" text="Signups Required">
+               <CheckBox fx:id="signupsCheck" mnemonicParsing="false" text="Signups Required">
                   <font>
                      <Font name="System Bold" size="12.0" />
                   </font>
@@ -168,7 +173,7 @@
          </HBox>
          <HBox layoutX="20.0" layoutY="1054.0">
             <children>
-               <CheckBox mnemonicParsing="false" text="Bookings Required">
+               <CheckBox fx:id="bookingsCheck" mnemonicParsing="false" text="Bookings Required">
                   <font>
                      <Font name="System Bold" size="12.0" />
                   </font>
@@ -181,7 +186,7 @@
          </HBox>
          <HBox layoutX="20.0" layoutY="1071.0">
             <children>
-               <CheckBox mnemonicParsing="false" text="Uses Preferred Routing">
+               <CheckBox fx:id="prefRouteCheck" mnemonicParsing="false" text="Uses Preferred Routing">
                   <font>
                      <Font name="System Bold" size="12.0" />
                   </font>
@@ -194,9 +199,9 @@
          </HBox>
          <HBox alignment="CENTER_RIGHT" spacing="5.0">
             <children>
-               <Button mnemonicParsing="false" prefWidth="75.0" text="Cancel" />
-               <Button mnemonicParsing="false" onAction="#saveButtonClicked" prefWidth="75.0" text="Save" />
-               <Button defaultButton="true" mnemonicParsing="false" prefWidth="100.0" text="Review Event" />
+               <Button fx:id="cancelBtn" mnemonicParsing="false" prefWidth="75.0" text="Cancel" />
+               <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveButtonClicked" prefWidth="75.0" text="Save" />
+               <Button fx:id="reviewBtn" defaultButton="true" mnemonicParsing="false" prefWidth="100.0" text="Review Event" />
             </children>
             <VBox.margin>
                <Insets top="20.0" />
@@ -207,7 +212,7 @@
          </HBox>
          </children>
       <padding>
-         <Insets left="10.0" top="10.0" />
+         <Insets left="10.0" right="10.0" top="10.0" />
       </padding>
       </VBox>
 </ScrollPane>
