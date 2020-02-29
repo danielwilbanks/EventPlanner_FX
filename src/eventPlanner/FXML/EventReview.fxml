@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eventPlanner.Controller.EventReviewController">
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="New Event - Standard">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label text="Review the event details below. If there are errors, click 'Cancel' to go back to the event editor. If everything is correct, click 'Save' to save your event for the future or 'Publish' to post the event on the DVA website." wrapText="true">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <TextArea editable="false" prefHeight="261.0" prefWidth="580.0" wrapText="true" />
+            <HBox alignment="CENTER_RIGHT" spacing="5.0">
+               <children>
+                  <Button mnemonicParsing="false" prefWidth="100.0" text="Cancel" />
+                  <Button mnemonicParsing="false" prefWidth="100.0" text="Save" />
+                  <Button defaultButton="true" mnemonicParsing="false" prefWidth="100.0" text="Publish" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

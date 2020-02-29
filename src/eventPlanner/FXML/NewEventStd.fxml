@@ -21,7 +21,7 @@
                   <Insets top="20.0" />
                </VBox.margin>
             </Label>
-         <Label text="Enter basic information about the event. All fields are required unless otherwise stated." />
+         <Label text="Enter basic information about the event. All fields are required unless otherwise specified." />
             <HBox spacing="10.0">
                <children>
                   <Label text="Network">
