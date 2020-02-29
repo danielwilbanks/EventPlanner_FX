@@ -24,9 +24,15 @@ public class Email {
     }
 
     //Validates a full address passed into it
-    public boolean validate(String email) {
+    public static boolean validate(String email) {
         String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
         return email.matches(regex);
+    }
+
+    //Validates the full address already stored in the object
+    public boolean validate() {
+        String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+        return fullAddress.matches(regex);
     }
 
     //Getters
