@@ -1,12 +1,10 @@
 package eventPlanner.Controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import javax.swing.*;
@@ -49,6 +47,11 @@ public class NewEventStdController {
     //Save button click handler method
     public void saveButtonClicked() {
         validate(); //Validate all fields
+    }
+
+    //Cancel button click handler method
+    public void cancelBtnClicked() {
+
     }
 
     //Form validation method

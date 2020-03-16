@@ -1,8 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eventPlanner.Controller.welcomeViewController">
-
-</AnchorPane>
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eventPlanner.Controller.welcomeViewController">
+   <center>
+      <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="newEventBtn" mnemonicParsing="false" onAction="#newEventClicked">
+               <graphic>
+                  <HBox alignment="CENTER" spacing="20.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Icons/NewFile.png" />
+                           </image>
+                        </ImageView>
+                        <VBox>
+                           <children>
+                              <Label text="New Event">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Create a new event from a template" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </graphic>
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <Button layoutX="175.0" layoutY="161.0" maxWidth="270.0" mnemonicParsing="false">
+               <graphic>
+                  <HBox alignment="CENTER" spacing="20.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Icons/LoadFile.png" />
+                           </image>
+                        </ImageView>
+                        <VBox>
+                           <children>
+                              <Label text="Load Event">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Open an event file to view or edit" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </graphic>
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <Button layoutX="175.0" layoutY="193.0" maxHeight="44.0" maxWidth="270.0" mnemonicParsing="false">
+               <graphic>
+                  <HBox alignment="CENTER" spacing="20.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Icons/calendar4.png" />
+                           </image>
+                        </ImageView>
+                        <VBox>
+                           <children>
+                              <Label text="Event Calendar">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="View previous and upcoming events" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </graphic>
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+   <top>
+      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Good Evening, Daniel">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Label text="What would you like to do?" />
+         </children>
+         <BorderPane.margin>
+            <Insets top="20.0" />
+         </BorderPane.margin>
+      </VBox>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER_RIGHT" BorderPane.alignment="CENTER_RIGHT">
+         <children>
+            <Label text="Logged in as Daniel Wilbanks, Director" />
+            <Hyperlink text="Log out" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" right="5.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+</BorderPane>

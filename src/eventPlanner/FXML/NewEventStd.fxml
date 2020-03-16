@@ -199,7 +199,7 @@
          </HBox>
          <HBox alignment="CENTER_RIGHT" spacing="5.0">
             <children>
-               <Button fx:id="cancelBtn" mnemonicParsing="false" prefWidth="75.0" text="Cancel" />
+               <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#cancelBtnClicked" prefWidth="75.0" text="Cancel" />
                <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveButtonClicked" prefWidth="75.0" text="Save" />
                <Button fx:id="reviewBtn" defaultButton="true" mnemonicParsing="false" prefWidth="100.0" text="Review Event" />
             </children>
