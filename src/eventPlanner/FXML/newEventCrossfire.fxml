@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane fx:id="viewPane" vbarPolicy="ALWAYS" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eventPlanner.Controller.NewEventCrossfireController">
+    <VBox>
+        <children>
+            <Label fx:id="titleLabel" text="New Event - Crossfire">
+                <font>
+                    <Font name="Segoe UI" size="18.0" />
+                </font>
+            </Label>
+            <Label text="Details">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+                <VBox.margin>
+                    <Insets top="20.0" />
+                </VBox.margin>
+            </Label>
+            <Label text="Enter basic information about the event. All fields are required unless otherwise specified." />
+            <HBox spacing="10.0">
+                <children>
+                    <Label text="Network">
+                        <HBox.margin>
+                            <Insets right="20.0" />
+                        </HBox.margin>
+                    </Label>
+                    <RadioButton fx:id="vatsimRB" mnemonicParsing="false" selected="true" text="VATSIM" />
+                    <RadioButton fx:id="ivaoRB" mnemonicParsing="false" text="IVAO" />
+                    <RadioButton fx:id="pilotEdgeRB" mnemonicParsing="false" text="PilotEdge" />
+                </children>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+            </HBox>
+            <HBox>
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+                <children>
+                    <Label text="Event Name" />
+                </children>
+            </HBox>
+            <TextField fx:id="eventNameTxt" maxWidth="500.0" onKeyTyped="#nameTextChanged" prefHeight="25.0" prefWidth="350.0">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font></TextField>
+         <HBox spacing="20.0">
+            <VBox.margin>
+               <Insets top="10.0" />
+            </VBox.margin>
+            <children>
+               <VBox>
+                  <children>
+                        <Label text="Featured Airport 1" />
+                        <HBox alignment="CENTER_LEFT" spacing="5.0">
+                            <children>
+                                <ComboBox prefHeight="25.0" prefWidth="175.0" promptText="-" />
+                                <TextField fx:id="featAptTxt" prefColumnCount="5" />
+                            </children>
+                        </HBox>
+                  </children>
+               </VBox>
+               <VBox>
+                  <children>
+                     <Label text="Featured Airport 2" />
+                     <HBox alignment="CENTER_LEFT" spacing="5.0">
+                        <children>
+                           <ComboBox prefHeight="25.0" prefWidth="175.0" promptText="-" />
+                           <TextField fx:id="featAptTxt1" prefColumnCount="5" />
+                        </children>
+                     </HBox>
+                  </children>
+               </VBox>
+            </children>
+         </HBox>
+            <HBox spacing="10.0">
+                <children>
+                    <VBox>
+                        <children>
+                            <Label text="Event Date" />
+                            <DatePicker fx:id="datePicker" />
+                        </children>
+                    </VBox>
+                    <VBox prefWidth="100.0">
+                        <children>
+                            <Label text="Start Time" />
+                            <TextField fx:id="startTimeTxt" promptText="HH:MM" />
+                        </children>
+                    </VBox>
+                    <VBox prefWidth="100.0">
+                        <children>
+                            <Label text="End Time" />
+                            <TextField fx:id="endTimeTxt" promptText="HH:MM" />
+                        </children>
+                    </VBox>
+                    <AnchorPane prefHeight="42.0" prefWidth="59.0">
+                        <children>
+                            <Label layoutY="20.0" text="All times are in zulu (GMT)" />
+                        </children>
+                    </AnchorPane>
+                </children>
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+            </HBox>
+            <Label text="ATC Contact Addresses (Optional)">
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+            </Label>
+            <TextArea fx:id="atcEmailTxt" prefHeight="119.0" prefWidth="394.0" promptText="List one address per line" />
+            <Label text="Description">
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+            </Label>
+            <TextArea fx:id="descriptionTxt" prefHeight="200.0" prefWidth="510.0" />
+            <Label layoutX="20.0" layoutY="63.0" text="Routing">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+                <VBox.margin>
+                    <Insets top="30.0" />
+                </VBox.margin>
+            </Label>
+            <Label text="Automatically add crossfire routes, or use the route manager to create custom routes" />
+         <HBox spacing="10.0">
+            <VBox.margin>
+               <Insets top="5.0" />
+            </VBox.margin>
+            <children>
+               <Button mnemonicParsing="false" text="Auto-Generate Routes" />
+                  <Button mnemonicParsing="false" onAction="#openRouteManager" text="Open Route Manager" />
+            </children>
+         </HBox>
+            <Label text="Current event routes">
+                <VBox.margin>
+                    <Insets top="20.0" />
+                </VBox.margin>
+            </Label>
+            <TableView fx:id="routesTableView" prefHeight="200.0">
+                <columns>
+                    <TableColumn prefWidth="93.0" text="Route Number" />
+                    <TableColumn prefWidth="76.0" text="Departure" />
+                    <TableColumn prefWidth="78.0" text="Arrival" />
+                    <TableColumn prefWidth="296.0" text="Route" />
+                </columns>
+            </TableView>
+            <Label layoutX="20.0" layoutY="612.0" text="Banner Image">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+                <VBox.margin>
+                    <Insets top="30.0" />
+                </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER_LEFT" spacing="5.0">
+                <VBox.margin>
+                    <Insets top="5.0" />
+                </VBox.margin>
+                <children>
+                    <Label fx:id="bannerLbl" text="No image selected" />
+                    <Button mnemonicParsing="false" text="Browse" />
+                </children>
+            </HBox>
+            <Label layoutX="20.0" layoutY="949.0" text="Options">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+                <VBox.margin>
+                    <Insets top="30.0" />
+                </VBox.margin>
+            </Label>
+            <Label text="Select options to add notations to the event briefing for special circumstances" />
+            <HBox>
+                <children>
+                    <CheckBox fx:id="signupsCheck" mnemonicParsing="false" text="Signups Required">
+                        <font>
+                            <Font name="System Bold" size="12.0" />
+                        </font>
+                    </CheckBox>
+                    <Label text=" - Select this option if one or more routes does not exist in the DVA schedule" />
+                </children>
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+            </HBox>
+            <HBox layoutX="20.0" layoutY="1054.0">
+                <children>
+                    <CheckBox fx:id="bookingsCheck" mnemonicParsing="false" text="Bookings Required">
+                        <font>
+                            <Font name="System Bold" size="12.0" />
+                        </font>
+                    </CheckBox>
+                    <Label text=" - Select this option if the hosting organization uses bookings for the event" />
+                </children>
+                <VBox.margin>
+                    <Insets top="5.0" />
+                </VBox.margin>
+            </HBox>
+            <HBox layoutX="20.0" layoutY="1071.0">
+                <children>
+                    <CheckBox fx:id="prefRouteCheck" mnemonicParsing="false" text="Uses Preferred Routing">
+                        <font>
+                            <Font name="System Bold" size="12.0" />
+                        </font>
+                    </CheckBox>
+                    <Label text=" - Select this option if one or more routes uses preferred routing" />
+                </children>
+                <VBox.margin>
+                    <Insets top="5.0" />
+                </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" spacing="5.0">
+                <children>
+                    <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#cancelBtnClicked" prefWidth="75.0" text="Cancel" />
+                    <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveButtonClicked" prefWidth="75.0" text="Save" />
+                    <Button fx:id="reviewBtn" defaultButton="true" mnemonicParsing="false" prefWidth="100.0" text="Review Event" />
+                </children>
+                <VBox.margin>
+                    <Insets top="20.0" />
+                </VBox.margin>
+                <padding>
+                    <Insets bottom="10.0" />
+                </padding>
+            </HBox>
+        </children>
+        <padding>
+            <Insets left="10.0" right="10.0" top="10.0" />
+        </padding>
+    </VBox>
+</ScrollPane>
