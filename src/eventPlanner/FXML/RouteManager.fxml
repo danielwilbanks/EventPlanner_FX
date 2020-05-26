@@ -34,7 +34,7 @@
                                           </Label>
                                           <HBox spacing="5.0">
                                              <children>
-                                                <ComboBox prefWidth="200.0" promptText="-" />
+                                                <ComboBox fx:id="depSearchCB" prefWidth="200.0" promptText="-" />
                                                 <TextField prefColumnCount="5" />
                                              </children>
                                           </HBox>
@@ -45,7 +45,7 @@
                                           <Label text="Arrival Field" />
                                           <HBox spacing="5.0">
                                              <children>
-                                                <ComboBox prefHeight="25.0" prefWidth="200.0" promptText="-" />
+                                                <ComboBox fx:id="arrSearchCB" prefHeight="25.0" prefWidth="200.0" promptText="-" />
                                                 <TextField prefColumnCount="5" />
                                              </children>
                                           </HBox>
@@ -125,6 +125,9 @@
                         </VBox>
                      </content>
                   </Tab>
+                  <Tab closable="false" text="Search Results">
+
+                  </Tab>
                   <Tab closable="false" text="Create Custom Route">
                      <VBox>
                         <children>
@@ -147,8 +150,8 @@
                                        </Label>
                                        <HBox spacing="5.0">
                                           <children>
-                                             <ComboBox prefWidth="200.0" promptText="-" />
-                                             <TextField prefColumnCount="5" />
+                                             <ComboBox fx:id="depFieldCustomCB" prefWidth="200.0" promptText="-" />
+                                             <TextField fx:id="depFieldCustomTxt" prefColumnCount="5" />
                                           </children>
                                        </HBox>
                                     </children>
@@ -158,8 +161,8 @@
                                        <Label text="Arrival Field" />
                                        <HBox spacing="5.0">
                                           <children>
-                                             <ComboBox prefHeight="25.0" prefWidth="200.0" promptText="-" />
-                                             <TextField prefColumnCount="5" />
+                                             <ComboBox fx:id="arrFieldCustomCB" prefHeight="25.0" prefWidth="200.0" promptText="-" />
+                                             <TextField fx:id="arrFieldCustomTxt" prefColumnCount="5" />
                                           </children>
                                        </HBox>
                                     </children>
@@ -174,7 +177,7 @@
                                  <Insets top="10.0" />
                               </VBox.margin>
                            </Label>
-                           <TextField />
+                           <TextField fx:id="routingTxt" />
                            <HBox spacing="10.0">
                               <VBox.margin>
                                  <Insets top="10.0" />
@@ -182,8 +185,8 @@
                               <children>
                                  <RadioButton fx:id="rnavRB" mnemonicParsing="false" selected="true" text="RNAV" />
                                  <RadioButton fx:id="nonrnavRB" mnemonicParsing="false" text="Non-RNAV" />
-                                 <CheckBox mnemonicParsing="false" text="Pilot Defined" />
-                                 <CheckBox mnemonicParsing="false" text="Signups Required" />
+                                 <CheckBox fx:id="pilotDefXB" mnemonicParsing="false" text="Pilot Defined" />
+                                 <CheckBox fx:id="signupXB" mnemonicParsing="false" text="Signups Required" />
                               </children>
                            </HBox>
                            <HBox spacing="10.0">
@@ -195,7 +198,7 @@
                                              <Insets top="10.0" />
                                           </padding>
                                        </Label>
-                                       <TextField prefColumnCount="5" promptText="nm" />
+                                       <TextField fx:id="distanceTxt" prefColumnCount="5" promptText="nm" />
                                     </children>
                                  </VBox>
                                  <VBox>
@@ -207,7 +210,7 @@
                                        </Label>
                                        <HBox alignment="CENTER" spacing="10.0">
                                           <children>
-                                             <TextField prefColumnCount="10" promptText="HH:MM" />
+                                             <TextField fx:id="timeTxt" prefColumnCount="10" promptText="HH:MM" />
                                              <Label text="RVSM Altitude">
                                                 <HBox.margin>
                                                    <Insets left="50.0" />
@@ -223,8 +226,8 @@
                            </HBox>
                            <HBox alignment="TOP_CENTER" spacing="10.0">
                               <children>
-                                 <Button mnemonicParsing="false" prefWidth="100.0" text="Reset" />
-                                 <Button defaultButton="true" mnemonicParsing="false" prefWidth="150.0" text="Add route to event" />
+                                 <Button fx:id="resetBtn" mnemonicParsing="false" onAction="#resetCustomClicked" prefWidth="100.0" text="Reset" />
+                                 <Button fx:id="addCustomBtn" defaultButton="true" mnemonicParsing="false" onAction="#addCustomClicked" prefWidth="150.0" text="Add route to event" />
                               </children>
                               <VBox.margin>
                                  <Insets top="30.0" />
@@ -234,6 +237,9 @@
                         <padding>
                            <Insets left="10.0" right="10.0" />
                         </padding></VBox>
+                  </Tab>
+                  <Tab closable="false" text="Event Routes">
+
                   </Tab>
                </tabs>
             </TabPane>

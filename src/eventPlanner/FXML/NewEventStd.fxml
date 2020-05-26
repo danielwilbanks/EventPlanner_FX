@@ -59,7 +59,7 @@
                <Insets />
             </VBox.margin>
             <children>
-               <ComboBox prefHeight="25.0" prefWidth="175.0" promptText="-" />
+               <ComboBox fx:id="airportsCB" prefHeight="25.0" prefWidth="175.0" promptText="-" />
                <TextField fx:id="featAptTxt" prefColumnCount="5" />
             </children>
          </HBox>
@@ -123,15 +123,11 @@
             <VBox.margin>
                <Insets top="20.0" />
             </VBox.margin>
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
          </Label>
-         <TableView fx:id="routesTableView" prefHeight="200.0">
-           <columns>
-             <TableColumn prefWidth="93.0" text="Route Number" />
-             <TableColumn prefWidth="76.0" text="Departure" />
-               <TableColumn prefWidth="78.0" text="Arrival" />
-               <TableColumn prefWidth="296.0" text="Route" />
-           </columns>
-         </TableView>
+         <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" />
          <Label layoutX="20.0" layoutY="612.0" text="Banner Image">
             <font>
                <Font name="System Bold" size="14.0" />
@@ -140,15 +136,21 @@
                <Insets top="30.0" />
             </VBox.margin>
          </Label>
-         <HBox alignment="CENTER_LEFT" spacing="5.0">
+         <VBox spacing="10.0">
             <VBox.margin>
                <Insets top="5.0" />
             </VBox.margin>
             <children>
-               <Label fx:id="bannerLbl" text="No image selected" />
-               <Button mnemonicParsing="false" text="Browse" />
+               <HBox alignment="CENTER_LEFT" spacing="5.0">
+                  <children>
+                     <Label fx:id="bannerLbl" text="No image selected" />
+                     <Button fx:id="imgButton" mnemonicParsing="false" onAction="#imgButtonClicked" text="Browse" />
+                     <Label fx:id="bannerErrorLbl" text="Image file selected does not meet restrictions or image is missing" textFill="RED" visible="false" />
+                  </children>
+               </HBox>
+               <Label text="Maximum banner image size is 800x256 pixels. Maximum file size is 131KB" />
             </children>
-         </HBox>
+         </VBox>
          <Label layoutX="20.0" layoutY="949.0" text="Options">
             <font>
                <Font name="System Bold" size="14.0" />
@@ -186,7 +188,7 @@
          </HBox>
          <HBox layoutX="20.0" layoutY="1071.0">
             <children>
-               <CheckBox fx:id="prefRouteCheck" mnemonicParsing="false" text="Uses Preferred Routing">
+               <CheckBox fx:id="prefRouteCheck" mnemonicParsing="false" text="Preferred Routing">
                   <font>
                      <Font name="System Bold" size="12.0" />
                   </font>
@@ -201,7 +203,7 @@
             <children>
                <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#cancelBtnClicked" prefWidth="75.0" text="Cancel" />
                <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveButtonClicked" prefWidth="75.0" text="Save" />
-               <Button fx:id="reviewBtn" defaultButton="true" mnemonicParsing="false" prefWidth="100.0" text="Review Event" />
+               <Button fx:id="reviewBtn" defaultButton="true" mnemonicParsing="false" onAction="#reviewButtonClicked" prefWidth="100.0" text="Review Event" />
             </children>
             <VBox.margin>
                <Insets top="20.0" />
