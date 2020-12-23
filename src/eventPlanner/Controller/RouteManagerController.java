@@ -7,6 +7,8 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import javax.swing.*;
+
 public class RouteManagerController {
 
     @FXML
@@ -54,9 +56,25 @@ public class RouteManagerController {
             return;
 
         //Route variables
-        Airport dept = depFieldCustomCB.getValue(), dest = arrFieldCustomCB.getValue();
+        Airport dept = (Airport) depFieldCustomCB.getValue(), dest = (Airport) arrFieldCustomCB.getValue();
+        String route = routingTxt.getText(), length = timeTxt.getText();
+        int distance = Integer.parseInt(distanceTxt.getText());
+        Route.RVSM rvsmDir;
 
-        Route newRoute = new Route();
+        boolean rnav;
+
+        if (rnavRB.isSelected())
+            rnav = true;
+        else
+            rnav = false;
+
+        if (ebToggle.isSelected())
+            rvsmDir = Route.RVSM.EASTBOUND;
+        else
+            rvsmDir = Route.RVSM.WESTBOUND;
+
+
+        Route newRoute = new Route(dept, dest, route, rnav, distance, length, rvsmDir, pilotDefXB.isSelected(), signupXB.isSelected());
     }
 
     //Custom Route Reset Button Handler
